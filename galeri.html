@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Halaman Galeri</title>
+    <link rel="stylesheet" type="text/css" href="stylcss">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #007bff;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin: 0 10px;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #66c2ff;
+        }
+
+        h1 {
+            color: #007bff;
+            text-align: center;
+            margin-top: 100px;
+            margin-left: 380px;
+            font-size: 40px;
+            line-height: 1.2;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #555;
+            text-align: center;
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            width: 80%;
+            margin: 40px auto;
+            
+        opacity: 0;
+        animation: fadeIn 5s forwards;
+    
+        }
+
+        .content div {
+            flex: 1;
+            margin: 20px;
+        }
+
+        .content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .content img:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 200px;
+            width: 100%;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+
+
+        #datetime {
+            color: white;
+            font-size: 14px;
+            margin-right: 30px;
+        }
+        @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .vv {
+        opacity: 0;
+        animation: fadeIn 5s forwards;
+    }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+        <a href="index.html">Home</a>
+        <a href="galeri.html">Galeri</a>
+        <a href="produk.html">Produk</a>
+        <a href="transaksi.html">Transaksi</a>
+        <a href="bukutamu.html">Bukutamu</a>
+        <a href="https://asia.ac.id">Partner</a>
+            
+        </nav>
+        <div id="datetime">
+            <script>
+                function updateDateTime() {
+                    const now = new Date();
+                    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true };
+                    const formattedDateTime = now.toLocaleString('en-US', options);
+                    document.getElementById('datetime').textContent = formattedDateTime;
+                }
+
+                setInterval(updateDateTime, 1000);
+                updateDateTime(); // Initial call to display date/time immediately
+            </script>
+        </div>
+    </header>
+    <section class="vv">
+        <h1>Galeri</h1>
+        <p>Jelajahi galeri indah kami yang menampilkan gambar-gambar menakjubkan.</p>
+        <div class="content">
+            <div>
+                <img src="4.jpeg" alt="Gambar 1">
+            </div>
+            <div>
+                <img src="5.jpeg" alt="Gambar 2">
+            </div>
+            <div>
+                <img src="6.jpeg" alt="Gambar 3">
+            </div>
+            <div>
+                <img src="7.jpeg" alt="Gambar 4">
+            </div>
+            <div>
+                <img src="8.jpeg" alt="Gambar 5">
+            </div>
+            <div>
+                <img src="9.jpeg" alt="Gambar 6">
+            </div>
+            <div>
+                <img src="10.jpeg" alt="Gambar 7">
+            </div>
+            <div>
+                <img src="11.jpeg" alt="Gambar 9">
+            </div>
+        </div>
+    </section>
+    <footer id="footer">
+        &copy; 2024 Rofii NK. All rights reserved.
+    </footer>
+</body>
+
+</html>

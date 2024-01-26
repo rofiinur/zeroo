@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Halaman Produk</title>
+    <link rel="stylesheet" type="text/css" href="ss">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #007bff;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        #datetime {
+            color: white;
+            font-size: 14px;
+            margin-right: 30px
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin: 0 10px;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #66c2ff;
+        }
+
+        section {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #007bff;
+            margin-top: 10%;
+             font-size: 35px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        li {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 10px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h3 {
+            color: #007bff;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 200px;
+            width: 100%;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+        @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .ff {
+        opacity: 0;
+        animation: fadeIn 5s forwards;
+    }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="galeri.html">Galeri</a>
+            <a href="produk.html">Produk</a>
+            <a href="transaksi.html">Transaksi</a>
+            <a href="bukutamu.html">Bukutamu</a>
+            <a href="https://asia.ac.id">Partner</a>
+        </nav>
+        <div id="datetime">
+            <script>
+                function updateDateTime() {
+                    const now = new Date();
+                    const options = {
+                        weekday: 'long',
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                        hour: 'numeric',
+                        minute: 'numeric',
+                        second: 'numeric',
+                        hour12: true
+                    };
+                    const formattedDateTime = now.toLocaleString('en-US', options);
+                    document.getElementById('datetime').textContent = formattedDateTime;
+                }
+
+                setInterval(updateDateTime, 1000);
+                updateDateTime(); // Initial call to display date/time immediately
+            </script>
+        </div>
+    </header>
+
+    <section class="ff">
+        <h2>Daftar Produk</h2>
+        <ul>
+            <li>
+                <h3>Sendal Jepit Standar</h3>
+                <img src="1.jpeg" alt="Produk 1">
+                <p>Terbuat dari bahan pilihan tahan banting multifungsi, bisa digunakan buat mukul orang.</p>
+                <p>Harga: Rp.50.000</p>
+                <p>Stok: 20</p>
+                <p>Rating: ★★★★☆</p>
+                <button type="button">Beli Sekarang</button>
+            </li>
+            <li>
+                <h3>Sendal Jepit Premium</h3>
+                <img src="2.jpeg" alt="Produk 2">
+                <p>Nyaman di kaki terbuat dari bahan premium, tidak mudah putus.</p>
+                <p>Harga: Rp.100.000</p>
+                <p>Stok: 7</p>
+                <p>Rating: ★★★☆☆</p>
+                <button type="button">Beli Sekarang</button>
+            </li>
+            <li>
+                <h3>Mousepad</h3>
+                <img src="3.jpeg" alt="Produk 3">
+                <p>Mousepad sangat lembut sehingga bisa meningkatkan performa game anda.</p>
+                <p>Harga: Rp.700.000</p>
+                <p>Stok: 30</p>
+                <p>Rating: ★★★☆☆</p>
+                <button type="button">Beli Sekarang</button>
+            </li>
+        </ul>
+    </section>
+
+    <footer id="footer">
+        &copy; 2024 Rofii NK. All rights reserved.
+    </footer>
+
+</body>
+
+</html>

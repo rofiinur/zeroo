@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>Halaman Form Transaksi</title>
+  <link rel="stylesheet" type="text/css" href="styls">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #f8f9fa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #007bff;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      z-index: 1000;
+      transition: background-color 0.3s ease;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #datetime {
+      color: white;
+      font-size: 14px;
+      margin-right: 30px
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      margin: 0 10px;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #66c2ff;
+    }
+
+    section {
+      text-align: center;
+      padding: 20px;
+      margin-top: 80px;
+    }
+
+    h2 {
+      color: #007bff;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    label {
+      margin-top: 10px;
+      color: #007bff;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      background-color: #007bff;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 400px;
+      width: 100%;
+      z-index: 1000;
+      transition: background-color 0.3s ease;
+    }
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .aa {
+      opacity: 0;
+        animation: fadeIn 5s forwards;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="galeri.html">Galeri</a>
+      <a href="produk.html">Produk</a>
+      <a href="transaksi.html">Transaksi</a>
+      <a href="bukutamu.html">Bukutamu</a>
+      <a href="https://asia.ac.id">Partner</a>
+    </nav>
+    <div id="datetime">
+      <script>
+        function updateDateTime() {
+          const now = new Date();
+          const options = {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric',
+            hour12: true
+          };
+          const formattedDateTime = now.toLocaleString('en-US', options);
+          document.getElementById('datetime').textContent = formattedDateTime;
+        }
+
+        setInterval(updateDateTime, 1000);
+        updateDateTime(); // Initial call to display date/time immediately
+      </script>
+    </div>
+  </header>
+  <section class="aa">
+    <h2>Form Transaksi</h2>
+    <form action="" method="post">
+      <div class="gg">
+      <label for="nama">Nama Pelanggan:</label>
+      <input type="text" id="nama" name="nama" required>
+
+      <label for="barang">Barang:</label>
+      <input type="text" id="barang" name="barang" required>
+
+      <label for="jumlah">Jumlah:</label>
+      <input type="number" id="jumlah" name="jumlah" required>
+
+      <label for="metode_pembayaran">Metode Pembayaran:</label>
+      <select id="metode_pembayaran" name="metode_pembayaran" required>
+        <option value="cash">Cash</option>
+        <option value="transfer">Transfer</option>
+        <option value="kartu_kredit">Kartu Kredit</option>
+      </select>
+
+      <button type="submit">Proses Transaksi</button>
+      </div>
+    </form>
+  </section>
+  <footer id="footer">
+    &copy; 2024 Rofii NK. All rights reserved.
+  </footer>
+
+</body>
+
+</html>

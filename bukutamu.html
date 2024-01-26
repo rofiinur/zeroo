@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Halaman Form Buku Tamu</title>
+    <link rel="stylesheet" type="text/css" href="stylss">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #007bff;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #datetime {
+            color: white;
+            font-size: 14px;
+            margin-right: 30px
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin: 0 10px;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #66c2ff;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 200px;
+            width: 100%;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+
+        section {
+            text-align: center;
+            padding: 20px;
+            margin-top: 80px;
+        }
+
+        h2 {
+            color: #007bff;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .ss {
+            opacity: 0;
+            animation: fadeIn 5s forwards;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="galeri.html">Galeri</a>
+            <a href="produk.html">Produk</a>
+            <a href="transaksi.html">Transaksi</a>
+            <a href="bukutamu.html">Bukutamu</a>
+            <a href="https://asia.ac.id">Partner</a>
+        </nav>
+        <div id="datetime">
+            <script>
+                function updateDateTime() {
+                    const now = new Date();
+                    const options = {
+                        weekday: 'long',
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                        hour: 'numeric',
+                        minute: 'numeric',
+                        second: 'numeric',
+                        hour12: true
+                    };
+                    const formattedDateTime = now.toLocaleString('en-US', options);
+                    document.getElementById('datetime').textContent = formattedDateTime;
+                }
+
+                setInterval(updateDateTime, 1000);
+                updateDateTime(); // Initial call to display date/time immediately
+            </script>
+        </div>
+    </header>
+
+    <section class="ss">
+        <div>
+            <form name="guestbookForm" onsubmit="return validateForm()">
+                <h2>BUKU TAMU</h2>
+                <input class="nama" name="TxtNama" required type="text" id="TxtNama" placeholder="Nama">
+                <br>
+                <input class="alamat" name="TxtAlamat" required type="text" id="TxtAlamat" placeholder="Alamat">
+                <br>
+                <input class="email" name="TxtEmail" required type="email" id="TxtEmail" placeholder="Email">
+                <br>
+                <input class="kota" name="TxtKota" required type="text" id="TxtKota" placeholder="Kota">
+                <br>
+                <textarea name="TxtPesan" required placeholder="Pesan Anda"></textarea>
+                <br>
+                <div>
+                    <input class="button" type="submit" name="submit" value="Simpan">
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer id="footer">
+        &copy; 2024 Rofii NK. All rights reserved.
+    </footer>
+</body>
+
+</html>
